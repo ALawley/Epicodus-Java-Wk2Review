@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h1>Your Address Book</h1>
+  <h3>$word.getWord()</h3>
+</div>
+<a class="btn btn-primary" href="/words/$word.getId()/definitions/new">Add a new definition</a>
+<h2>Definition:</h2>
+#foreach($definition in $word.getDefinitions())
+<div class="well">
+  <h3>Definition:</h3><h4>$definition.getMeaning()</h4>
+  <h3>Part of Speech:</h3><h4>$definition.getPart()</h4>
+  <h3>Usage:</h3><h4 class="sentence">$definition.getSentence()</h4>
+</div>
+#end
+
+
+
+
+<br>
+<a class="btn btn-info" href="/words">View all words</a>
