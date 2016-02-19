@@ -7,7 +7,8 @@ public class WordTest {
   public ClearRule clearRule = new ClearRule();
 
   @Test
-  public void method_input_result() {
-    // eventually put your testing code here
+  public void word_instantiatesCorrectly() {
+    Word testWord = new Word();
+    assertEquals(true, testWord instanceof Word);
   }
 }

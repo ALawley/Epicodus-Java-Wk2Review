@@ -1,5 +1,5 @@
 import java.util.ArrayList;
 
-public Class Dictionary {
+public class Dictionary {
 
 }
