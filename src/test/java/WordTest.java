@@ -1,5 +1,6 @@
 import org.junit.*;
 import static org.junit.Assert.*;
+import java.util.ArrayList;
 
 public class WordTest {
 
@@ -50,5 +51,10 @@ public class WordTest {
     Word testWord2 = new Word("test2");
     Word.clear();
     assertEquals(Word.all().size(), 0);
+  }
+
+  @Test public void getDefinitions_initiallyReturnsEmptyArrayList() {
+    Word testWord = new Word("test");
+    assertEquals(true, testWord.getDefinitions() instanceof ArrayList);
   }
 }

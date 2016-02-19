@@ -4,11 +4,13 @@ public class Word {
   private static ArrayList<Word> instances  = new ArrayList<Word>();
   private String mName;
   private int mId;
+  private ArrayList<Definition> mDefinitions;
 
   public Word(String word) {
     mName = word;
     instances.add(this);
     mId = instances.size();
+    mDefinitions = new ArrayList<Definition>();
   }
 
   public String getWord() {
@@ -33,5 +35,9 @@ public class Word {
 
   public static void clear() {
     instances.clear();
+  }
+
+  public ArrayList<Definition> getDefinitions() {
+    return mDefinitions;
   }
 }
