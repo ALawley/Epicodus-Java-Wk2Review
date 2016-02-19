@@ -24,4 +24,11 @@ public class WordTest {
     Word testWord2 = new Word("test2");
     assertEquals(2, Word.all().size());
   }
+
+  @Test
+  public void getId_returnsIdNumberofWord_2() {
+    Word testWord = new Word("test");
+    Word testWord2 = new Word("test2");
+    assertEquals(Word.all().size(), testWord2.getId());
+  }
 }
