@@ -49,4 +49,9 @@ public class DefinitionTest {
     Definition testDefinition = new Definition("test", "noun", "This is a test");
     assertEquals(testDefinition, Definition.find(testDefinition.getId()));
   }
+  @Test
+  public void find_throwsExceptionWhenIdOutOfBounds_null() {
+    Definition testDefinition = new Definition("test", "noun", "This is a test");
+    assertTrue(Definition.find(999) == null);
+  }
 }
