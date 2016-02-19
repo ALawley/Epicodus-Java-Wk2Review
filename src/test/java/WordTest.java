@@ -11,10 +11,17 @@ public class WordTest {
     Word testWord = new Word("test");
     assertEquals(true, testWord instanceof Word);
   }
-  
+
   @Test
   public void word_instantiatesWithName() {
     Word testWord = new Word("test");
     assertEquals("test", testWord.getWord());
+  }
+
+  @Test
+  public void all_returnsAllWords() {
+    Word testWord = new Word("test");
+    Word testWord2 = new Word("test2");
+    assertEquals(2, Word.all().size());
   }
 }
