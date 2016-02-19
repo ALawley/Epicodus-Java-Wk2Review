@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <h1>Your Address Book</h1>
+  <h3>Add a definition to $word.getWord()</h3>
+</div>
+
+<p>Add a definition here:</p>
+
+<form action="/definition-new" method="post">
+  <input id="wordId" name="wordId" type="hidden" value="$word.getId()">
+  <label for="definition">Definition</label>
+  <input id="definition" name="definition" type="text">
+
+  <label for="part">Part of Speech (noun, verb, etc.)</label>
+  <input id="part" name="part" type="text">
+
+  <label for="sentence">Use it in a sentence</label>
+  <input id="sentence" name="sentence" type="text">
+
+  <button type="submit" class="btn btn-success">Add definition</button>
+</form>
