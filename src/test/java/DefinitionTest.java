@@ -37,4 +37,10 @@ public class DefinitionTest {
     assertTrue(Definition.all().contains(testDefinition));
     assertTrue(Definition.all().contains(testDefinition2));
   }
+
+  @Test
+  public void getId_returnsIdOfDefinition_id() {
+    Definition testDefinition = new Definition("test", "noun", "This is a test");
+    assertEquals(Definition.all().size(), testDefinition.getId());
+  }
 }
