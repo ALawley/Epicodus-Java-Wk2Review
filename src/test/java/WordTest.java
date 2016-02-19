@@ -53,8 +53,17 @@ public class WordTest {
     assertEquals(Word.all().size(), 0);
   }
 
-  @Test public void getDefinitions_initiallyReturnsEmptyArrayList() {
+  @Test
+  public void getDefinitions_initiallyReturnsEmptyArrayList() {
     Word testWord = new Word("test");
     assertEquals(true, testWord.getDefinitions() instanceof ArrayList);
+  }
+
+  @Test
+  public void addDefinition_addDefinitionObjectToDefinitionArrayList() {
+    Word testWord = new Word("test");
+    Definition testDefinition = new Definition("test", "noun", "This is a test");
+    testWord.addDefinition(testDefinition);
+    assertTrue(testWord.getDefinitions().contains(testDefinition));
   }
 }
