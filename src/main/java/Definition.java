@@ -34,4 +34,8 @@ public class Definition {
   public int getId() {
     return mId;
   }
+
+  public static Definition find(int id) {
+    return instances.get(id - 1);
+  }
 }

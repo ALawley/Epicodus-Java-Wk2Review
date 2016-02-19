@@ -43,4 +43,10 @@ public class DefinitionTest {
     Definition testDefinition = new Definition("test", "noun", "This is a test");
     assertEquals(Definition.all().size(), testDefinition.getId());
   }
+
+  @Test
+  public void find_returnsDefinitionBasedOffId_testDefinition() {
+    Definition testDefinition = new Definition("test", "noun", "This is a test");
+    assertEquals(testDefinition, Definition.find(testDefinition.getId()));
+  }
 }
