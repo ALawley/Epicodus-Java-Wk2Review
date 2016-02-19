@@ -37,4 +37,10 @@ public class WordTest {
     Word testWord = new Word("test");
     assertEquals(testWord, Word.find(testWord.getId()));
   }
+
+  @Test
+  public void find_throwsExceptionWhenIdOutOfBounds_null_testWord() {
+    Word testWord = new Word("test");
+    assertTrue(Word.find(999) == null);
+  }
 }
