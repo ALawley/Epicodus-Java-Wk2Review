@@ -43,4 +43,12 @@ public class WordTest {
     Word testWord = new Word("test");
     assertTrue(Word.find(999) == null);
   }
+
+  @Test
+  public void clear_clearsAllWords() {
+    Word testWord = new Word("test");
+    Word testWord2 = new Word("test2");
+    Word.clear();
+    assertEquals(Word.all().size(), 0);
+  }
 }
