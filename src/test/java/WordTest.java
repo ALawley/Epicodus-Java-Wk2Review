@@ -31,4 +31,10 @@ public class WordTest {
     Word testWord2 = new Word("test2");
     assertEquals(Word.all().size(), testWord2.getId());
   }
+
+  @Test
+  public void find_returnsWordWithMatchingId_testWord() {
+    Word testWord = new Word("test");
+    assertEquals(testWord, Word.find(testWord.getId()));
+  }
 }

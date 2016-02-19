@@ -22,4 +22,8 @@ public class Word {
   public int getId() {
     return mId;
   }
+
+  public static Word find(int id) {
+    return instances.get(id - 1);
+  }
 }
