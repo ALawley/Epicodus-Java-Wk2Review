@@ -54,4 +54,11 @@ public class DefinitionTest {
     Definition testDefinition = new Definition("test", "noun", "This is a test");
     assertTrue(Definition.find(999) == null);
   }
+  @Test
+  public void clear_clearsAllDefinitions() {
+    Definition testDefinition = new Definition("test", "noun", "This is a test");
+    Definition testDefinition2 = new Definition("testing", "verb", "I am testing this");
+    Definition.clear();
+    assertEquals(0, Definition.all().size());
+  }
 }

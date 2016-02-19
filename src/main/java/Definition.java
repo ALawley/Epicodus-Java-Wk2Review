@@ -41,6 +41,9 @@ public class Definition {
     } catch (IndexOutOfBoundsException e) {
       return null;
     }
+  }
 
+  public static void clear() {
+    instances.clear();
   }
 }
