@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Definition {
+  private static ArrayList<Definition> instances = new ArrayList<Definition>();
   private String mMeaning;
   private String mPart;
   private String mSentence;
@@ -9,6 +10,7 @@ public class Definition {
     mMeaning = meaning;
     mPart = part;
     mSentence = sentence;
+    instances.add(this);
   }
 
   public String getMeaning() {
@@ -21,5 +23,9 @@ public class Definition {
 
   public String getSentence() {
     return mSentence;
+  }
+
+  public static ArrayList<Definition> all() {
+    return instances;
   }
 }

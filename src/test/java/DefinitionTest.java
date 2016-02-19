@@ -1,5 +1,6 @@
 import org.junit.*;
 import static org.junit.Assert.*;
+import java.util.ArrayList;
 
 public class DefinitionTest {
 
@@ -8,26 +9,32 @@ public class DefinitionTest {
 
   @Test
   public void definition_instantiatesCorrectly() {
-    Definition testDefinition = new Definition("test", "noun", "This is a sentence");
+    Definition testDefinition = new Definition("test", "noun", "This is a test");
     assertEquals(true, testDefinition instanceof Definition);
   }
 
   @Test
-  public void definition_instantiatesWithMeaning() {
-    Definition testDefinition = new Definition("test", "noun", "This is a sentence");
+  public void getMeaning_returnsMeaning_test() {
+    Definition testDefinition = new Definition("test", "noun", "This is a test");
     assertEquals("test", testDefinition.getMeaning());
   }
 
   @Test
-  public void definition_instantiatesWithPartofSpeech() {
-    Definition testDefinition = new Definition("test", "noun", "This is a sentence");
+  public void getPart_returnsPartofSpeech_noun() {
+    Definition testDefinition = new Definition("test", "noun", "This is a test");
     assertEquals("noun", testDefinition.getPart());
   }
 
   @Test
-  public void definition_instantiatesWithSentence() {
-    Definition testDefinition = new Definition("test", "noun", "This is a sentence");
-    assertEquals("This is a sentence", testDefinition.getSentence());
+  public void getSentence_returnsSentence_thisIsATest() {
+    Definition testDefinition = new Definition("test", "noun", "This is a test");
+    assertEquals("This is a test", testDefinition.getSentence());
   }
 
+  @Test public void all_returnsAllDefinitions() {
+    Definition testDefinition = new Definition("test", "noun", "This is a test");
+    Definition testDefinition2 = new Definition("testing", "verb", "I am testing this");
+    assertTrue(Definition.all().contains(testDefinition));
+    assertTrue(Definition.all().contains(testDefinition2));
+  }
 }
