@@ -4,15 +4,15 @@ public class Definition {
   private static ArrayList<Definition> instances = new ArrayList<Definition>();
   private String mMeaning;
   private String mPart;
-  private String mSentence;
   private int mId;
+  private ArrayList<Sentence> mSentences;
 
-  public Definition(String meaning, String part, String sentence) {
+  public Definition(String meaning, String part) {
     mMeaning = meaning;
     mPart = part;
-    mSentence = sentence;
     instances.add(this);
     mId = instances.size();
+    mSentences = new ArrayList<Sentence>();
   }
 
   public String getMeaning() {
@@ -21,10 +21,6 @@ public class Definition {
 
   public String getPart() {
     return mPart;
-  }
-
-  public String getSentence() {
-    return mSentence;
   }
 
   public static ArrayList<Definition> all() {
@@ -45,5 +41,13 @@ public class Definition {
 
   public static void clear() {
     instances.clear();
+  }
+
+  public ArrayList<Sentence> getSentences() {
+    return mSentences;
+  }
+
+  public void addSentence(Sentence sentence) {
+    mSentences.add(sentence);
   }
 }
