@@ -20,4 +20,13 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567");
     assertThat(pageSource().contains("Add New Word"));
   }
+
+  @Test
+  public void addWordPageTest() {
+    goTo("http://localhost:4567/");
+    click("a");
+    assertThat(pageSource().contains("Add Word"));
+  }
+
+
 }
