@@ -11,7 +11,8 @@ public class WordTest {
     Word testWord = new Word("test");
     assertEquals(true, testWord instanceof Word);
   }
-
+  
+  @Test
   public void word_instantiatesWithName() {
     Word testWord = new Word("test");
     assertEquals("test", testWord.getWord());
