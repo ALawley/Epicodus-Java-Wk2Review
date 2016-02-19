@@ -21,6 +21,18 @@ public class App {
       model.put("template", "templates/word-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    post("/words", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+
+      String word = request.queryParams("word");
+      Word newWord = new Word(word);
+      model.put("words", Word.all());
+
+      model.put("template", "templates/words.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
   }
 
 
