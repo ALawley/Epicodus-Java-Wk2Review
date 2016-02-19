@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h1>Your Dictionary</h1>
+  <h2>Words</h2>
+</div>
+
+<a class="btn btn-primary" href="/words/new">Add New Word</a>
+#foreach($word in $words)
+ <h3><a href="/words/$word.getId()">$word.getWord()</a></h3>
+#end
