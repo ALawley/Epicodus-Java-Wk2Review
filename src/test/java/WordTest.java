@@ -8,7 +8,12 @@ public class WordTest {
 
   @Test
   public void word_instantiatesCorrectly() {
-    Word testWord = new Word();
+    Word testWord = new Word("test");
     assertEquals(true, testWord instanceof Word);
+  }
+
+  public void word_instantiatesWithName() {
+    Word testWord = new Word("test");
+    assertEquals("test", testWord.getWord());
   }
 }
