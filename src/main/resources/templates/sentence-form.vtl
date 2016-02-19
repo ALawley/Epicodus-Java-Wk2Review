@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <h1>Your Dictionary</h1>
+  <h3>Add a sentence</h3>
+</div>
+
+<h4>Add a sentence here:</h4>
+
+<form action="/sentence-new" method="post">
+  <input id="wordId" name="wordId" type="hidden" value="$word.getId()">
+  <input id="definitionId" name="definitionId" type="hidden" value="$definition.getId()">
+  <label for="sentence">Sentence</label>
+  <input id="sentence" name="sentence" type="text">
+
+  <button type="submit" class="btn btn-success">Add sentence</button>
+</form>

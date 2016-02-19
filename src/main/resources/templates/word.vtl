@@ -12,6 +12,7 @@
     #foreach($sentence in $definition.getSentences())
       <li><h4 class="sentence">$sentence.getSentence()</h4></li>
     #end
+  <a class="btn btn-primary" href="/words/$word.getId()/$definition.getId()/sentences/new">Add New Sentence</a>
 </div>
 #end
 
