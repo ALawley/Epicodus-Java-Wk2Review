@@ -70,8 +70,10 @@ public class App {
     String meaning = request.queryParams("definition");
     String part = request.queryParams("part");
     String sentence = request.queryParams("sentence");
+    Sentence newSentence = new Sentence(sentence);
     Word word = Word.find(Integer.parseInt(request.queryParams("wordId")));
-    Definition newDefinition = new Definition(meaning, part, sentence);
+    Definition newDefinition = new Definition(meaning, part);
+    newDefinition.addSentence(newSentence);
     Word.find(word.getId()).addDefinition(newDefinition);
     model.put("word", word);
 

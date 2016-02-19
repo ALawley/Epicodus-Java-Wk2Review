@@ -62,7 +62,7 @@ public class WordTest {
   @Test
   public void addDefinition_addDefinitionObjectToDefinitionArrayList() {
     Word testWord = new Word("test");
-    Definition testDefinition = new Definition("test", "noun", "This is a test");
+    Definition testDefinition = new Definition("test", "noun");
     testWord.addDefinition(testDefinition);
     assertTrue(testWord.getDefinitions().contains(testDefinition));
   }

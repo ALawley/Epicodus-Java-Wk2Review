@@ -7,7 +7,11 @@
 <div class="well">
   <h3>Definition:</h3><h4>$definition.getMeaning()</h4>
   <h3>Part of Speech:</h3><h4>$definition.getPart()</h4>
-  <h3>Usage:</h3><h4 class="sentence">$definition.getSentence()</h4>
+  <h3>Usage:</h3>
+  <ul>
+    #foreach($sentence in $definition.getSentences())
+      <li><h4 class="sentence">$sentence.getSentence()</h4></li>
+    #end
 </div>
 #end
 
