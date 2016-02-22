@@ -1,6 +1,6 @@
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
-import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
