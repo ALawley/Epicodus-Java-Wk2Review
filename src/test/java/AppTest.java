@@ -1,5 +1,6 @@
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
+import org.junit.ClassRule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
@@ -11,6 +12,9 @@ public class AppTest extends FluentTest {
   public WebDriver getDefaultDriver() {
       return webDriver;
   }
+
+  @Rule
+  public ClearRule clearRule = new ClearRule();
 
   @ClassRule
   public static ServerRule server = new ServerRule();
@@ -36,52 +40,47 @@ public class AppTest extends FluentTest {
     assertThat(pageSource().contains("test-word"));
   }
 
-
-// These integration tests are failing due to selenium.StaleElementReferenceException errors. All the behavior they model works properly when reproduced manually.
-
-
-  // @Test
-  // public void wordPageTest() {
-  //   goTo("http://localhost:4567/words/new");
-  //   fill("#word").with("test-word");
-  //   submit(".btn");
-  //   click("a", withText("test-word"));
-  //   assertThat(pageSource().contains("Add a new definition"));
-  // }
-  //
-  // @Test
-  // public void addDefinitionPageTest() {
-  //   goTo("http://localhost:4567/words/new");
-  //   fill("#word").with("test-word");
-  //   submit(".btn");
-  //   click("a", withText("test-word"));
-  //   click("a", withText("Add a new definition"));
-  //   assertThat(pageSource().contains("Add a definition to test-word"));
-  // }
-  //
-  // @Test
-  // public void addDefinitionTest() {
-  //   goTo("http://localhost:4567/words/new");
-  //   fill("#word").with("test-word");
-  //   submit(".btn");
-  //   click("a", withText("test-word"));
-  //   click("a", withText("Add a new definition"));
-  //   fill("#definition").with("test");
-  //   fill("#part").with("noun");
-  //   fill("#sentence").with("This is a test");
-  //   submit(".btn");
-  //   assertThat(pageSource().contains("This is a test"));
-  // }
-  //
-  // @Test
-  // public void wordsPageReturnTest() {
-  //   goTo("http://localhost:4567/words/new");
-  //   fill("#word").with("test-word");
-  //   submit(".btn");
-  //   click("a", withText("test-word"));
-  //   click("a", withText("View all words"));
-  //   assertThat(pageSource().contains("Words"));
-  // }
-
+  @Test
+  public void wordPageTest() {
+    goTo("http://localhost:4567/words/new");
+    fill("#word").with("test-word");
+    submit(".btn");
+    click("a", withText("test-word"));
+    assertThat(pageSource().contains("Add a new definition"));
+  }
+  
+  @Test
+  public void addDefinitionPageTest() {
+    goTo("http://localhost:4567/words/new");
+    fill("#word").with("test-word");
+    submit(".btn");
+    click("a", withText("test-word"));
+    click("a", withText("Add a new definition"));
+    assertThat(pageSource().contains("Add a definition to test-word"));
+  }
+  
+  @Test
+  public void addDefinitionTest() {
+    goTo("http://localhost:4567/words/new");
+    fill("#word").with("test-word");
+    submit(".btn");
+    click("a", withText("test-word"));
+    click("a", withText("Add a new definition"));
+    fill("#definition").with("test");
+    fill("#part").with("noun");
+    fill("#sentence").with("This is a test");
+    submit(".btn");
+    assertThat(pageSource().contains("This is a test"));
+  }
+  
+  @Test
+  public void wordsPageReturnTest() {
+    goTo("http://localhost:4567/words/new");
+    fill("#word").with("test-word");
+    submit(".btn");
+    click("a", withText("test-word"));
+    click("a", withText("View all words"));
+    assertThat(pageSource().contains("Words"));
+  }
 
 }
